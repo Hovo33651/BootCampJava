@@ -42,7 +42,7 @@ public class Employee {
      * write method which will print all information about employee
      */
 
-    public void allInfoAboutEmployee() {
+    public void allInfo() {
         System.out.println("id-  " + id + "\n" + "name-  " + name + "\n" + "department-  " + department + "\n" + "age- " + age + "\n" + "gender- " + gender);
 
     }

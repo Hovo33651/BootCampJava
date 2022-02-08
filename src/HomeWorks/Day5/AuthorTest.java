@@ -12,8 +12,8 @@ public class AuthorTest {
         author1.allInfo();
         author2.allInfo();
         author3.allInfo();
-        author1.nameEmailInfo();
-        author2.nameEmailInfo();
-        author3.nameEmailInfo();
+        author1.Info();
+        author2.Info();
+        author3.Info();
     }
 }

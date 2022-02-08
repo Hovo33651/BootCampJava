@@ -34,7 +34,7 @@ public class Book {
     /**
      * write method which will print all information about Book
      */
-    public void allInfoAboutBook() {
+    public void allInfo() {
         System.out.println("name-  " + name + "\n" + "author-  " + author.name + "\n" + "price- " + price);
 
     }
@@ -42,7 +42,7 @@ public class Book {
     /**
      * write methods which will print name and email of the author
      */
-    public void infoAuthor() {
+    public void info() {
         System.out.println("author-  " + author.name + "\n" + "email- " + author.email);
 
     }

@@ -8,11 +8,11 @@ public class PersonTest {
          */
 
         Person person1 = new Person("Ani", 25, "Hakob Hakobyan 3");
-        person1.allInfoAboutPerson();
+        person1.allInfo();
 
 
         Person person2 = new Person("Anna", 36, "Hakob Hakobyan 17");
-        person2.allInfoAboutPerson();
+        person2.allInfo();
 
 
     }

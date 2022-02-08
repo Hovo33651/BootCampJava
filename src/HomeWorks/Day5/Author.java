@@ -46,7 +46,7 @@ public class Author {
      * write methods which will print name and email of the author
      */
 
-    public void nameEmailInfo() {
+    public void Info() {
         System.out.println("name-  " + name + "\n" + "email- " + email);
 
     }

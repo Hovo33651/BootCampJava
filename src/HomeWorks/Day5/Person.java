@@ -43,7 +43,7 @@ public class Person {
     /**
      * write method which will print all information about person
      */
-    public void allInfoAboutPerson() {
+    public void allInfo() {
         System.out.println("name-  " + name + "\n" + "age- " + age + "\n" + "address- " + address);
 
     }

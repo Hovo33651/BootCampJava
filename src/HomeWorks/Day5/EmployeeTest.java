@@ -17,11 +17,10 @@ public class EmployeeTest {
         /**
          *  print all info about them
          */
-        employee1.allInfoAboutEmployee();
-        employee1.allInfoAboutEmployee();
-        employee1.allInfoAboutEmployee();
-        employee1.allInfoAboutEmployee();
-        employee1.allInfoAboutEmployee();
+        employee1.allInfo();
+        employee1.allInfo();
+        employee1.allInfo();
+        employee1.allInfo();
     }
 
 
