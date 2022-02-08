@@ -38,7 +38,7 @@ public class Author {
      * write method which will print all information about  Author
      */
 
-    public void allInfoAboutAuthor() {
+    public void allInfo() {
         System.out.println("name-  " + name + "\n" + "email- " + email + "\n" + "gender-  " + gender);
     }
 
@@ -46,18 +46,11 @@ public class Author {
      * write methods which will print name and email of the author
      */
 
-    public void nameEmailAboutAuthor() {
+    public void nameEmailInfo() {
         System.out.println("name-  " + name + "\n" + "email- " + email);
 
     }
 
-    @Override
-    public String toString() {
-        return "Author{" +
-                "name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", gender='" + gender + '\'' +
-                '}';
-    }
+
 }
 

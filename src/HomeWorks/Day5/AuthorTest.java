@@ -9,9 +9,11 @@ public class AuthorTest {
         Author author2 = new Author("Semirjian A.", "BLCY@gmail.com", 'M');
         Author author3 = new Author("Albanian A.", "THTWL@gmail.com");
 
-        author1.allInfoAboutAuthor();
-        author2.allInfoAboutAuthor();
-        author1.nameEmailAboutAuthor();
-        author2.nameEmailAboutAuthor();
+        author1.allInfo();
+        author2.allInfo();
+        author3.allInfo();
+        author1.nameEmailInfo();
+        author2.nameEmailInfo();
+        author3.nameEmailInfo();
     }
 }
