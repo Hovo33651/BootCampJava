@@ -9,13 +9,13 @@ public class Operators {
 
     public static void main(String[] args) {
         Operators op = new Operators();
-        //  op.vote();
-        //  op.evenNumber();
+        // op.vote();
+        // op.evenNumber();
         // op.randomnum();
         //op.multiplyOfFive();
-        // op.greatestNumber();
+        //op.greatestNumber();
         //op.numWeekDay();
-        //    op.iceCream();
+        // op.iceCream();
         // op.leapYear();
         //op.randomValue();
         //op.aAndb();
@@ -23,8 +23,11 @@ public class Operators {
         // op.point();
         //op.triangle();
         //op.equalsCount();
+       // op.discrim();
       //  op.decreasing();
     }
+
+
 /*
     /**1
      * Write a Java program to allow the user to input his/her age. Then the
@@ -163,6 +166,8 @@ public void numWeekDay() {
         System.out.println("Saturday");
     System.out.println(weekday);
 }
+
+
 */
 /**8
  *The ice cream parlor sells three balls and five balls. Can you buy
@@ -396,10 +401,30 @@ public void triangle() {
             } else {
 
                 System.out.println("1");
-            }
-
-        }}
+            }        }}
 */
+
+/**
+ *  14.Given 3 real numbers a , b , c .FInd all decisions for
+ *     ax2 + bx + c = 0.Print all decisions, if there is not a
+ *     decision ,print “Cant be”.
+ */
+   /*
+
+    public static void discrim(int a, int b, int c){
+        double d=Math.pow(b,2)-4*a*c;
+        if(d>0){
+            double x1=(-b+Math.sqrt(d))/4;
+            double x2=(-b-Math.sqrt(d))/4;
+            System.out.println("Roots are "+x1+"\t"+x2);
+        }
+        else if (d==0){
+            System.out.println("Roots are same "+(-b/2*a));
+        }
+        else
+            System.out.println("Can't be");
+
+    }*/
            /**
      * 15.Given 3 integer values arrange them in non-decreasing order.
      * a<= b<= c.
