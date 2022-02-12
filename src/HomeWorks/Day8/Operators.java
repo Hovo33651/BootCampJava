@@ -55,7 +55,7 @@ public class Operators {
         int num = scanner.nextInt();
         if (num % 2 == 0)
             System.out.println("Number is an even");
-        else if (num % 2 == 0) System.out.println("Number is not an even");
+        else if (num % 2 != 0) System.out.println("Number is not an even");
         else System.out.println("Invalid number");
     }
 */
@@ -383,7 +383,7 @@ public void triangle() {
      * other.(Input numbers from console)Example`
      * Input numbers` -3 -1 -3 output 2
      */
-/*
+
     public void equalsCount() {
         System.out.println("Please input num1");
         int num1 = scanner.nextInt();
@@ -401,8 +401,8 @@ public void triangle() {
             } else {
 
                 System.out.println("1");
-            }        }}
-*/
+            }        }else System.out.println("3");}
+
 
 /**
  *  14.Given 3 real numbers a , b , c .FInd all decisions for
@@ -410,7 +410,7 @@ public void triangle() {
  *     decision ,print “Cant be”.
  */
    /*
-
+/*
     public static void discrim(int a, int b, int c){
         double d=Math.pow(b,2)-4*a*c;
         if(d>0){
@@ -419,7 +419,8 @@ public void triangle() {
             System.out.println("Roots are "+x1+"\t"+x2);
         }
         else if (d==0){
-            System.out.println("Roots are same "+(-b/2*a));
+            System.out.println("Roots are same "+(-b/(2*a)));
+
         }
         else
             System.out.println("Can't be");
