@@ -14,11 +14,12 @@ public class Day9 {
         //init.mathMax();
         //init.tern();
         //init.max();
+        //init.mathAbs();
         // init.question();
         // init.vowelOrConst();
         //init.numKeys();
-        //init.evenOdd();
-        // init.operator();
+       // init.evenOdd();
+        //init.operator();
         //init.week();
         //init.grade();
     }
@@ -35,7 +36,7 @@ public class Day9 {
         System.out.println("Please input text2");
         String text2 = scanner.nextLine();
         if (text1 == text2) {
-            System.out.println(true);
+            System.out.println(text1 == text2);
         } else {
             System.out.println(false);
         }
@@ -57,12 +58,12 @@ public class Day9 {
     public boolean strComp(){
         String text1 = "java";
         String text2=new String("java");
-        boolean Str=false;
+        boolean str=false;
         if(text1 == text2){
-            Str=true;
-            return Str;
+            str=true;
+            return str;
         }
-        else return Str;
+        else return str;
     }
 */
 
@@ -94,6 +95,12 @@ public void mathMax(){
     int b  = scanner.nextInt();
     int max= a>b?a:b;
     System.out.println(max);
+
+}*/
+      /*
+public void mathAbs(){
+    System.out.println("Please input a");
+    int a = scanner.nextInt();
     int abs=a>=0? a:-a;
     System.out.println(abs);
 }*/
@@ -110,8 +117,8 @@ public void mathMax(){
         String a = scanner.nextLine();
         int tern= a.equals("null")? -1:a.equals(" ")?0:1;
         System.out.println(tern);
-    }*/
-
+    }
+*/
     /**
      * Write a java program to find maximum from a given 3 integer numbers using ternary
      * operator.Input numbers from console
@@ -151,31 +158,20 @@ public void mathMax(){
         System.out.println("\nPlease input answer's number");
         int i= scanner.nextInt();
         switch (i){
-            case 1:{
-                if(i==1){
-                    System.out.println("Invalide choice");
-                break;}
-            }
-            case 2:{
-                if(i==2){
-                    System.out.println("Invalide choice");
-                break;}
-            }
+            case 1:
+            case 2:
             case 3:{
-                if(i==3){
                     System.out.println("Invalide choice");
                 break;}
-            }
             case 4:{
-                if(i==4){
                     System.out.println("Congratulation");
-                break;}
+                break;
             }
             default:
                 System.out.println("Invalid answer");
         }
-    }*/
-
+    }
+*/
     /**
      * Write Java Program to check Vowel or Consonant using Switch Case.
      * Example`
@@ -243,27 +239,23 @@ public void mathMax(){
     public void evenOdd() {
         System.out.println("input a number ");
         int n = scanner.nextInt();
-        int x = 0;
-        if (n % 2 == 0) {
-            x = 2;
-            switch (x) {
-                case 2:
+        if(n!=0){
+            switch (n%2){
+                case 0: {
                     System.out.println("pressed number is even");
                     break;
-                default:
-            }
-        }
-        if (n % 2 != 0) {
-            x = 1;
-            switch (x) {
-                case 1:
+                }
+                case 1: {
                     System.out.println("pressed number is odd");
                     break;
-                default:
+                }
+                default:{
+                    System.out.println("invalid number");
+                    break;
             }
         }
-    } */
-
+    }else System.out.println("please input number other 0");}
+*/
 
     /**
      *Program to make a calculator using switch case in Java
@@ -282,9 +274,9 @@ public void mathMax(){
      */
 /*
     public void operator() {
-        System.out.println("enter first name");
+        System.out.println("enter first number");
         int first = scanner.nextInt();
-        System.out.println("enter second name");
+        System.out.println("enter second number");
         int second = scanner.nextInt();
         System.out.println("enter an operator(+,-,*,/");
        char op=scanner.next().charAt(0);
@@ -299,13 +291,15 @@ public void mathMax(){
                 System.out.println(first*second);
                 break;}
             case '/':{
+            if(second!=0){
                 System.out.println(first/second);
                 break;}
+            else System.out.println("second number can not be 0"); break;}
             default:
                 System.out.println("Invalid operation");
         }
-}
-*/
+}*/
+
 
     /**
      * Given the String variable day holding the name of the weekday Sunday, Monday, etc., set an int variable to 1, 2,
