@@ -9,23 +9,7 @@ public class Day10 {
 
     public static void main(String[] args) {
         Day10 d = new Day10();
-//exeWhile1(1,10);
-//exeWhile2(1,20);
-// exeWhile3(30);
-//smallestDivisor(37);
-// allINTpowers(30);
-// desendingInt(20);
-        //7  multiplyDesending(20);
-        // d.exactPower();
-        //9 power(32);
-        // 10 charEquivalent(32, 122);
-        //  multiplyOfThree(20);
-        //12
-        //13 milage(20);
-        //14
-        //15
-        //16 d.randMaxOrMin(25);
-        //17 System.out.println(sumOfDigits(252));
+
     }
 
     /**
@@ -37,32 +21,41 @@ public class Day10 {
 /*
     public static void exeWhile1(int i, int j) {
 
-        while (i < j) {
+        int i = 1;
+        while (i > 0) {
+
+            System.out.println("i = " + i);
             i++;
-            System.out.println(i);
+
+            if (i == 11) break;
         }
     }
     public static void exeWhile2(int i, int j) {
 
-        while (i < j) {
-            i++;
-            if(i%2==0){
-            System.out.println(i + " is even");
-        }
-    }}
-
-
-    public static void exeWhile3(int j) {
+        System.out.println("Even numbers:");
         int i = 1;
+        while (true) {
 
-        while (i < j) {
-            int k = i * i;
-            if (k < j) {
-                i++;
-                System.out.println(k);
-            } else System.out.println("invalid input");
+            i++;
+            if (i % 2 == 0) {
+                System.out.println("i = " + i);
+
+            }
+            if (i == 21) break;
+        }}
+
+*//*
+    public static void exeWhile3(int j) {
+         int num = 1;
+        while (num * num <= n) {
+
+            System.out.println(num * num);
+            num++;
+
         }
-    }*/
+        }
+
+*/
 
     /**
      * Given an integer number, greater than 2.Find and print the
@@ -84,6 +77,7 @@ public class Day10 {
     }else System.out.println("invalid number");}
 */
 
+
     /**
      * 5.Print all integer powers of two not exceeding N in ascending
      * order.Input N from console. Example ` Input 50(You can not use
@@ -93,14 +87,31 @@ public class Day10 {
 /*
     public static void allINTpowers(int num) {
         int b = 1;
-
         while (b <= num) {
             b = b << 1;
             if (b < num) {
                 System.out.println(b);
             }
         }
-    }*/
+    }
+*/
+    /*
+     int power = 2;
+
+        if (power >= n) {
+
+            return;
+        }
+
+        System.out.println(power);
+
+        while (power < n) {
+            power = power * 2;
+            if (power < n) {
+                System.out.println(power);
+            }
+
+        }*/
 
     /**
      * 6.For a given integer number N,print all integers in descending
@@ -122,16 +133,30 @@ while(a<num){
  * 2 in descending order.
  */
 /*
-public static void multiplyDesending(int num){
-    int a=0;
-    while(a<num){
-        a++;
-        if(a%2==0){
-            System.out.println(num-a);
-        }
-    }}
-*/
+    public static void integersMultipleOf2DescendingOrder(int n) {
 
+       /* while (n > 0) {
+            if (n % 2 == 0) {
+                System.out.print(" " + n);
+                n -= 2;
+            } else {
+                n = n - 1;
+                System.out.print(" " + n);
+                n -= 2;
+            }
+        }
+        if (n % 2 != 0) {
+
+        n--;
+    }
+        while (n >= 2) {
+
+        System.out.print(" " + n);
+        n -= 2;
+    }
+
+}
+*/
 
 /**
  *8Input N natural number till N would be the exact power of 2.If N is
@@ -141,6 +166,7 @@ public static void multiplyDesending(int num){
  * - break loop
  *
  */
+
 /*
 int count=1;
 public void exactPower(){
@@ -166,17 +192,26 @@ public void exactPower(){
      */
 /*
 
-    public static void power(int x) {
-        int i = 2;
+    public static void power(int n) {
+        int num= 1;
         int count = 0;
-        while(x>=i){
-            i=i<<1;
+        while(num<n){
+          num+=2;
             count++;
         }
                 System.out.println(count);
             }
+/*int count = 0;
+        int num = 1;
+        while (n > num) {
+            num = num << 1;
+            count++;
+            if (num >= n) {
+                System.out.println(count);
+                break;
+            }
+        }*/
 
-*/
 
 
     /**
@@ -187,16 +222,27 @@ public void exactPower(){
 /*
     public static void charEquivalent(int i, int n){
 
+int k=0;int t=k;
+        while(i < n) {
 
-        while(i <= n)
-        { if(i%10==2){
-
-            System.out.println("\n");}
-            System.out.println(" The ASCII value of " + (char)i + "  =  " + i);
-            i++;
-        }
-    }
+            if (t%10==0 & i!=32){
+                System.out.println("\n");
+            }
+            System.out.println(" The ASCII value of " + (char) i + "  =  " + i);
+         i++; t++;
+        }}
 */
+     /* int min = 32;
+        int max = 122;
+        while (min <= max) {
+            char charac = (char) min;
+            System.out.print(" "+charac+" ");
+            if (min % 10 == 2&& min!=32) {
+                System.out.print("\n");
+            }
+            min++;
+        }*/
+
 /**
  * 11.Print all integer numbers from 1 to N, except that are multiple of
  * 3(Input N from console)
@@ -212,7 +258,7 @@ public static  void multiplyOfThree(int n){
         if(i%3==0){
             continue;
         }else System.out.println(i);
-    }
+    }}}
 */
 
 
@@ -225,8 +271,39 @@ public static  void multiplyOfThree(int n){
      * Input 10
      * Output -1
      */
-
-
+    /*
+    public static int fibonacciNumber(int input) {
+        int a1 = 0;
+        int a2 = 1;
+        int next = a1 + a2;
+        int index = 1;
+        while (next != input) {
+            if (next > input) {
+                return -1;
+            }
+            next = a1 + a2;
+            a1 = a2;
+            a2 = next;
+            index++;
+        }
+        return index;
+    }*/
+/*
+    public int task12(int a) {
+        int v = 0;
+        int b = 1;
+        int n = 3;
+        while (!(v + b > a)) {
+            if (v + b == a) {
+                return n;
+            }
+            int g = b;
+            b += v;
+            v = g;
+            n++;
+        }
+        return -1;
+    }*/
 
     /**
      * 13.On the first day, the athlete ran x kilometers,and then every day
@@ -240,25 +317,34 @@ public static  void multiplyOfThree(int n){
 
 /*
 
-    public static void milage(double k) {
-        double i = 10;
-        int count = 0;
-        while (i < k) {
-            i = i + (i * 10 / 100);
-            count++;
+    public static int mileage(double x, double y) {
 
+        int days = 1;
+        while (x < y) {
+            x = x + x * 0.1;
+            days++;
         }
-        System.out.println(count);
+        return days;
     }
-*/
+
+
+
     /**
      * 14.The deposit in the bank is x dollars. It increases annually by p
      * percent, after which the fractional part of cents is discarded.
      * Determine how many years the contribution(ներդրում) will be at
      * least y dollars.(Input x , p , y from console)
      */
-
-
+    /*
+    public static int bankDeposit(int x, int p, int y) {
+        int years = 0;
+        while (x < y) {
+            x += 0.1 * x * p;
+            years++;
+        }
+        return years;
+    }
+*/
     /**
      * 15.The sequence consists of different natural numbers and ends
      * with the number 0. Determine the value of the second largest
@@ -267,6 +353,30 @@ public static  void multiplyOfThree(int n){
      * number 0 itself is not included in the sequence, but serves as a sign of its
      * termination)).
      */
+/*
+    public static void DetermineValueOfSecondLargestElement() {
+
+        int max = Integer.MIN_VALUE;
+        int second = 0;
+        int num;
+        do {
+            num = sc.nextInt();
+            if (num > max) {
+                second = max;
+                max = num;
+            } else if (num > second && num != max) {
+                second = num;
+            }
+        } while (num != 0);
+        System.out.println(second);
+    }*/
+
+
+
+
+
+
+
 
     /**
      * 16.Write a program that generates a random number and asks the user
@@ -296,6 +406,36 @@ public static  void multiplyOfThree(int n){
         }
     }
 */
+    /* public static void printRandomIsLowerOrHigher(){
+
+        Random random = new Random();
+
+        int secret = random.nextInt(100);
+
+        System.out.println("Of number is 0,99:");
+        System.out.println("try gues my number: ");
+
+        int n = sc.nextInt();
+
+        int count = 0;
+
+        while (n!=secret){
+
+            count++;
+
+            if (n<secret){
+
+                System.out.println("Is lower num: ");
+
+            }else {System.out.println("My num is higher:");}
+
+            n = sc.nextInt();
+        }
+        System.out.println("Super, my num is " + count);
+
+
+
+    }*/
 
 
     /**
