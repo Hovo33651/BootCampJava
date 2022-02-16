@@ -7,6 +7,7 @@ public class Day11 {
 
     public static void main(String[] args) {
         Day11 d = new Day11();
+
     }
 
     /**
@@ -69,15 +70,35 @@ public class Day11 {
      * 8
      */
 
-/*
+
     public static void square(int a, int b) {
-        for (int i = a; i < b; i++) {
-            if ((i * i) < b) {
-                System.out.println(i * i);
+/*
+        for (int i = 0; i <= b; i++) {
+            if ((i*i) < b && (i*i)>a) {
+                System.out.println(i*i);
+
             }
+        }*/
+/*
+        for (int i = a; i <= b; i++) {
+            if (Math.sqrt(i)==(int)Math.sqrt(i)) {
+                System.out.println(i + " ");
+            }
+        }*/
+/*if (a > b) {
+    System.out.println("a can't be > b");
+    return;
+}
+for (int i = a; i <= b; i++) {
+    for (int j = 1; j < i; j++) {
+        if (j == (double) i / j) {
+            System.out.print(i+" ");
         }
     }
-*/
+}*/
+
+    }
+
 
     /**
      * 4.Enters 2 integer numbers : x and d from console
@@ -91,7 +112,6 @@ public class Day11 {
         for (int i = x; i != 0; i = i / 10) {
             if (i % 10 == d) {
                 count++;
-
             }
         }
         System.out.println(count);
@@ -104,6 +124,7 @@ public class Day11 {
      * Print the number consisting of the digits of the given number x in reverse
      * order. You do not need to output leading zeros.
      */
+
     /*
     public static void reverse(int x) {
         int rev = 0;
@@ -146,10 +167,13 @@ public class Day11 {
     /*
 
     public static void printDivisor(int n) {
-        for (int i = 1; i <= n; i++)
+        for (int i = 1; i <= n/2; i++)
             if (n % i == 0)
                 System.out.print(i + " ");
     }
+    System.out.print(n);
+    }
+
 */
 
     /**
@@ -160,27 +184,25 @@ public class Day11 {
      */
 
 /*
-    public static void naturalDivisors(int n) {
-        int i;
-        for (i = 1; i * i < n; i++) {
-            if (n % i == 0)
-                System.out.print(i + " ");
+    public static int naturalDivisors(int x) {
+        int count = 2;
+        for (int i = 2; i * i <= x; i++) {
+            if (x % i == 0) {
+                count += 2;
+                if (x / i == i) {
+                    count--;
+                }
+            }
         }
-        if (i - (n / i) == 1) {
-            i--;
-        }
-        for (; i >= 1; i--) {
-            if (n % i == 0)
-                System.out.print(n / i + " ");
-        }
+        return count;
     }
 */
 
-    /**
-     * 9
-     * 9.Calculate the sum of the given 10 natural numbers.
-     * Input integers from console
-     */
+        /**
+         * 9
+         * 9.Calculate the sum of the given 10 natural numbers.
+         * Input integers from console
+         */
 
     /*
     public void sumNaturalNumber() {
@@ -193,23 +215,37 @@ public class Day11 {
     }*/
 
 
-    /**
-     * 10. Convert a natural number from binary to decimal (no more than 10
-     * digits in a binary number).
-     * Example` Input ` 1001 Output` 9
-     * 111 Output` 7
-     */
+        /**
+         * 10. Convert a natural number from binary to decimal (no more than 10
+         * digits in a binary number).
+         * Example` Input ` 1001 Output` 9
+         * 111 Output` 7
+         */
+/*
+        public static int binaryToDecimal ( int bin){
+
+            int dec = 0;
+            int pow = 1;
+            for (int num = bin; num != 0; num = num / 10) {
+                dec += (pow * num % 10);
+                pow <<= 1;
+            }
+            return dec;
+        }
+*/
+
+        /**11
+         * 11.Enter the number N, followed by N integers.
+         *
+         * - Count how many zeros, positive numbers, negative numbers
+         * among the given N numbers.
+         *
+         * - It is necessary to print first the number of zeros, then the number
+         * of positive and negative numbers.
+         */
 
 
-    /**11
-     * 11.Enter the number N, followed by N integers.
-     *
-     * - Count how many zeros, positive numbers, negative numbers
-     * among the given N numbers.
-     *
-     * - It is necessary to print first the number of zeros, then the number
-     * of positive and negative numbers.
-     */
+
 
 
 /**12
@@ -225,12 +261,24 @@ public class Day11 {
  * 7 1 2 2 3 3 3 4
  */
 
+/*
+public static void generateSequence(int second){
+    int count = 0;
+    for (int i = 1; i <=second && count<=second; i++) {
+        for (int j = 0; j < i && count<second; j++) {
+            System.out.println(i + " ");
+            count++;
+        }
 
-    /**
-     * 13  Write a Java program by using two for loops to produce the output
-     * shown below:
-     * 1.Input N natural number, print picture like below in size N*N
-     */
+    }
+}*/
+
+
+        /**
+         * 13  Write a Java program by using two for loops to produce the output
+         * shown below:
+         * 1.Input N natural number, print picture like below in size N*N
+         */
 
     /*
     public static void pic(int n) {
@@ -243,12 +291,12 @@ public class Day11 {
     }
 */
 
-    /**
-     * 14.Write a program that prompts the user for the size (a non-negative
-     * integer in int); and prints the following checkerboard pattern.
-     */
+        /**
+         * 14.Write a program that prompts the user for the size (a non-negative
+         * integer in int); and prints the following checkerboard pattern.
+         */
 
-    /*
+/*
     public static void checkboard(int n) {
         boolean odd = false;
 
@@ -268,55 +316,96 @@ public class Day11 {
 
             System.out.println("");
         }
-    }
-*/
+    }*/
 
-    /**
-     * 15
-     * Write a program that prompts user for the size (a positive integer in
-     * int); and prints the multiplication table as shown:
-     * * | 1 2 3 4 5 6 7 8 9 10
-     * --------------------------------------------
-     * 1 | 1 2 3 4 5 6 7 8 9 10
-     * 2 | 2 4 6 8 10 12 14 16 18 20
-     * 3 | 3 6 9 12 15 18 21 24 27 30
-     * 4 | 4 8 12 16 20 24 28 32 36 40
-     * 5 | 5 10 15 20 25 30 35 40 45 50
-     * 6 | 6 12 18 24 30 36 42 48 54 60
-     * 7 | 7 14 21 28 35 42 49 56 63 70
-     * 8 | 8 16 24 32 40 48 56 64 72 80
-     * 9 | 9 18 27 36 45 54 63 72 81 90
-     * 10 | 10 20 30 40 50 60 70 80 90 100
-     */
-
-    /*
-    public static void table() {
-        int n = 1;
-        System.out.println(" * |  1  2  3  4  5  6  7  8  9  10 \n ---------------------------");
-        for (int i = 1; i <= 10; i++) {
-            n = i;
-            System.out.print("  " + n + " | ");
-            for (int j = 1; j <= 10; j++) {
-                System.out.print((j * i) + " ");
+    public static void  printCheckerboardPattern(int n){
+        String row=" ";
+        for(int i=0; i<n; i++){
+            row+= "#";
+        }
+        for (int i = 0; i < n; i++) {
+            if((i&i)==1){
+                System.out.println(" ");
             }
-            System.out.println();
-
+            System.out.println(row);
         }
     }
-*/
 
-    /**
-     * 16
-     * Write 4 programs (X = A, B, C, D) that prompts user for the
-     * size (a non-negative integer in int); and prints each of the patterns as
-     * shown:
-     * Enter the size: 4
-     * * **** **** *
-     * ** *** *** **
-     * *** ** ** ***
-     * **** * * ****
-     * a) b) c) d)
-     */
+
+        /**
+         * 15
+         * Write a program that prompts user for the size (a positive integer in
+         * int); and prints the multiplication table as shown:
+         * * | 1 2 3 4 5 6 7 8 9 10
+         * --------------------------------------------
+         * 1 | 1 2 3 4 5 6 7 8 9 10
+         * 2 | 2 4 6 8 10 12 14 16 18 20
+         * 3 | 3 6 9 12 15 18 21 24 27 30
+         * 4 | 4 8 12 16 20 24 28 32 36 40
+         * 5 | 5 10 15 20 25 30 35 40 45 50
+         * 6 | 6 12 18 24 30 36 42 48 54 60
+         * 7 | 7 14 21 28 35 42 49 56 63 70
+         * 8 | 8 16 24 32 40 48 56 64 72 80
+         * 9 | 9 18 27 36 45 54 63 72 81 90
+         * 10 | 10 20 30 40 50 60 70 80 90 100
+         */
+
+
+   /*     public void table () {
+            int size = scanner.nextInt();
+            int n = 1;
+            System.out.println(" * |  1  2  3    4    5     6    7    8    9    10 \n --------------------------");
+            for (int i = 1; i <= size; i++) {
+                n = i;
+                System.out.print("  " + n + " | ");
+                for (int j = 1; j <= size; j++) {
+                    System.out.print((j * i) + "   ");
+                }
+                System.out.println();
+
+            }
+        }*/
+
+        /*
+        public void task15(int n) {
+            for (int i = 0; i <= n; i++) {
+                if (i == 0) {
+                    System.out.print(" * | ");
+                } else {
+                    System.out.print(i + "   ");
+                }
+            }
+
+            System.out.print("\n____________________________________________\n");
+            for (int i = 1; i <= n; i++) {
+                if (i < 10) {
+                    System.out.print(" " + i + " |");
+                } else {
+                    System.out.print(i + " |");
+                }
+                for (int j = 1; j <= n; j++) {
+                    if (i * j < 10) {
+                        System.out.printf("%2d  ", (i * j));
+                    } else {
+                        System.out.printf(" %2d ", (i * j));
+                    }
+                }
+                System.out.println();
+            }
+        }
+*/
+        /**
+         * 16
+         * Write 4 programs (X = A, B, C, D) that prompts user for the
+         * size (a non-negative integer in int); and prints each of the patterns as
+         * shown:
+         * Enter the size: 4
+         * * **** **** *
+         * ** *** *** **
+         * *** ** ** ***
+         * **** * * ****
+         * a) b) c) d)
+         */
 
 /*
     public static void figure1() {
@@ -360,5 +449,5 @@ public class Day11 {
             System.out.println();
         }
     }*/
-}
+    }
 
