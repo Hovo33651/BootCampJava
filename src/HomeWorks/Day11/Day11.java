@@ -71,8 +71,8 @@ public class Day11 {
      */
 
 
-    public static void square(int a, int b) {
-/*
+ /*   public static void square(int a, int b) {
+
         for (int i = 0; i <= b; i++) {
             if ((i*i) < b && (i*i)>a) {
                 System.out.println(i*i);
@@ -244,9 +244,35 @@ for (int i = a; i <= b; i++) {
          * of positive and negative numbers.
          */
 
+    /**
+     * Task 11
+     * 11.Enter the number N, followed by N integers.
+     * <p>
+     * - Count how many zeros, positive numbers, negative numbers
+     * among the given N numbers.
+     * <p>
+     * - It is necessary to print first the number of zeros, then the number
+     * of positive and negative numbers.
+     */
+/*
+    public void task11(int n) {
+        int zero = 0;
+        int positive = 0;
+        int negative = 0;
+        for (int i = 1; i <= n; i++) {
+            int x = scanner.nextInt();
+            if (x < 0) {
+                negative++;
+            } else if (x > 0) {
+                positive++;
+            } else {
+                zero++;
+            }
+        }
+        System.out.println("zero - " + zero + " , positive - " + positive + " , negative - " + negative);
+    }
 
-
-
+*/
 
 /**12
  * &quot;GNCHE-1&quot; is a complex electronic device that issues every second
@@ -317,7 +343,7 @@ public static void generateSequence(int second){
             System.out.println("");
         }
     }*/
-
+/*
     public static void  printCheckerboardPattern(int n){
         String row=" ";
         for(int i=0; i<n; i++){
@@ -329,8 +355,7 @@ public static void generateSequence(int second){
             }
             System.out.println(row);
         }
-    }
-
+    }*/
 
         /**
          * 15
@@ -449,5 +474,5 @@ public static void generateSequence(int second){
             System.out.println();
         }
     }*/
-    }
+
 
