@@ -244,8 +244,6 @@ public class Day12 {
 
     public void rerrangeElemArray() {
         int[] array = new int[]{6, 5, 7, 4, 1, 1, 9};
-        int p;
-        int j = array.length;
         int i, t;
         for (i = 0; i < array.length / 2; i++) {
             t = array[i];
@@ -270,7 +268,6 @@ public class Day12 {
 
     public void rerrangeAdjancedElemArray() {
         int[] array = new int[]{6, 5, 7, 4, 8, 1, 9};
-        int j = array.length;
         int i, t;
         for (i = 0; i < array.length - 1; i += 2) {
             t = array[i];
@@ -322,6 +319,24 @@ public class Day12 {
      * Output ` 3 2 5 4 1
      */
 
+    public static void swapMinMax(int[] arr) {
+        int minIndex = 0;
+        int maxIndex = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > arr[maxIndex]) {
+                maxIndex = i;
+            }
+            if (arr[i] > arr[minIndex]) {
+                minIndex = i;
+            }
+        }
+        if (minIndex != maxIndex) {
+            int temp = arr[minIndex];
+            arr[minIndex] = arr[maxIndex];
+            arr[maxIndex] = temp;
+        }
+    }
+
 
     /**
      * 14.You are given an array of numbers and the index of an element in the
@@ -344,7 +359,6 @@ public class Day12 {
         for (int i = k; i < size; i++) {
             array[i] = array[i + 1];
         }
-
         for (int i = 0; i < size; i++) {
             System.out.print(array[i] + " ");
         }
@@ -359,19 +373,48 @@ public class Day12 {
      * Example` Input ` 1 2 2 3 3 3
      * Output ` 1
      */
+    public static void printElement(int[] arr) {
+        int len = arr.length;
+        boolean isUnique;
+        for (int i = 0; i < len; i++) {
+            isUnique = true;
 
+            for (int j = 0; j < len; j++) {
+                if (i != j && arr[i] == arr[j]) {
+                    isUnique = false;
+                    break;
+                }
+
+            }
+            if (isUnique) {
+                System.out.println(arr[i] + " ");
+            }
+        }
+    }
 
     /**
      * 16.An array of integers is given. It is required to “compress” it by moving
      * all non-zero elements to the left side of the array without changing their
      * order, and all zeros to the right side. The order of nonzero elements
-     *
+     * <p>
      * cannot be changed, an additional list cannot be used, the task must be
      * completed in one pass through the array. Print the resulting array.
      * Example` Input ` 1 0 3 0 5
      * Output ` 1 3 5 0 0
      */
+    public static void shiftZeros(int[] arr) {
+        int index = 0;
+        int temp;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] != 0) {
+                temp = arr[i];
+                arr[i] = arr[index];
+                arr[index] = temp;
+                index++;
+            }
 
+        }
+    }
 }
 
 
