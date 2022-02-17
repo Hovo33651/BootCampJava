@@ -290,17 +290,6 @@ public class Day13 {
  * 1011101
  * 1000001
  * 1111111
- * <p>
- * <p>
- * 10.Given number n. Create an array A [2 * n + 1] [2 * n + 1] and fill it in a
- * spiral, starting with the number 0 in the first cell A [0] [0]. The spiral goes
- * left, then turns down.
- * <p>
- * Example` Input `1
- * A[3][3]
- * Output` 0 1 2
- * 7 8 3
- * 6 5 4
  */
 
 /**
