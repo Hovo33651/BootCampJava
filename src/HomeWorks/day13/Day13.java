@@ -294,7 +294,7 @@ public class Day13 {
 
     public static void spiral1(int size){
         int array[][]=new int[size][size];
-        int startIndex=0,endIndex=size-1,count=1,e=0;
+        int startIndex=0,endIndex=size-1,e=0;
         while (e<=size) {
             for (int i = startIndex; i <= endIndex; i++) {
                 array[e][i]=1;
