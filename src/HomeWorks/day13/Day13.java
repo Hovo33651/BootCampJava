@@ -292,6 +292,40 @@ public class Day13 {
  * 1111111
  */
 
+    public static void spiral1(int size){
+        int array[][]=new int[size][size];
+        int startIndex=0,endIndex=size-1,count=1,e=0;
+        while (e<=size) {
+            for (int i = startIndex; i <= endIndex; i++) {
+                array[e][i]=1;
+            }
+            for (int i = startIndex+1; i <=endIndex; i++) {
+                array[i][size-1-e]=1;
+            }
+            for (int i = endIndex-1; i>=startIndex+1; i--) {
+                array[size-1-e][i]=1;
+            }
+            for (int i = endIndex; i>startIndex+1+e; i--) {
+                array[i][e]=1;
+            }
+
+            startIndex++;
+            endIndex-=2;
+            e+=2;
+        }
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length; j++) {
+                System.out.printf("%4d", array[i][j]);
+            }
+            System.out.println();
+        }
+    }
+
+
+
+
+
+
 /**
  * 10.Given number n. Create an array A [2 * n + 1] [2 * n + 1] and fill it in a
  * spiral, starting with the number 0 in the first cell A [0] [0]. The spiral goes
@@ -303,4 +337,36 @@ public class Day13 {
  * 7 8 3
  * 6 5 4
  */
+
+
+public static void spiral2(int size) {
+    int array[][] = new int[size][size];
+    int startIndex = 0, endIndex = size - 1, count = 1, e = 0;
+    while (e <= size / 2) {
+        for (int i = startIndex; i <= endIndex; i++) {
+            array[e][i] = count++;
+        }
+        for (int i = startIndex + 1; i <= endIndex; i++) {
+            array[i][size - 1 - e] = count++;
+        }
+        for (int i = endIndex - 1; i >= startIndex; i--) {
+            array[size - 1 - e][i] = count++;
+        }
+        for (int i = endIndex - 1; i > startIndex; i--) {
+            array[i][e] = count++;
+        }
+
+        startIndex++;
+        endIndex--;
+        e++;
+    }
+    for (int i = 0; i < array.length; i++) {
+        for (int j = 0; j < array.length; j++) {
+            System.out.printf("%4d", array[i][j]);
+        }
+        System.out.println();
+    }
+
+}
+
 }
