@@ -246,53 +246,49 @@ public class Day16 {
      */
 
 
+    /**
+     * 13.Given numbers n and m. Create an array A [n] [m] and fill it with a snake (see example).
+     * <p>
+     * Example` Input 4 10
+     * Output `
+     * 0 1 2 3 4 5 6 7 8 9
+     * 19 18 17 16 15 14 13 12 11 10
+     * 20 21 22 23 24 25 26 27 28 29
+     * 39 38 37 36 35 34 33 32 31 30
+     */
 
-
-
-        /**
-         * 13.Given numbers n and m. Create an array A [n] [m] and fill it with a snake (see example).
-         *
-         * Example` Input 4 10
-         * Output `
-         * 0 1 2 3 4 5 6 7 8 9
-         * 19 18 17 16 15 14 13 12 11 10
-         * 20 21 22 23 24 25 26 27 28 29
-         * 39 38 37 36 35 34 33 32 31 30
-         */
-
-        public static void snake(int n, int m) {
-            int[][] array = new int[n][m];
-            for (int i = 0; i < n; i++) {
-                if (i % 2 == 0) {
-                    for (int j = 0; j < m; j++) {
-                        array[i][j] = i * 10 + j;
-                    }
-                } else {
-                    for (int j = 0; j < m; j++) {
-
-                        array[i][j] = i * 10 + m - 1 - j;
-                    }
+    public static void snake(int n, int m) {
+        int[][] array = new int[n][m];
+        for (int i = 0; i < n; i++) {
+            if (i % 2 == 0) {
+                for (int j = 0; j < m; j++) {
+                    array[i][j] = i * 10 + j;
                 }
-            }
-
-            for (int i = 0; i < n; i++) {
+            } else {
                 for (int j = 0; j < m; j++) {
 
-                    System.out.print(array[i][j] + " ");
+                    array[i][j] = i * 10 + m - 1 - j;
                 }
-                System.out.println();
             }
         }
 
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
 
-
-        /**
-         * 14.Write a java program to rotate 2D matrix
-         * - - Give an opportunity to push 1 for transporting matrix by 90 degrees
-         * - - Give an opportunity to push 2 for transporting matrix by 180 degrees
-         * - - In other case print illegal choice
-         */
-
-
+                System.out.print(array[i][j] + " ");
+            }
+            System.out.println();
+        }
     }
+
+
+    /**
+     * 14.Write a java program to rotate 2D matrix
+     * - - Give an opportunity to push 1 for transporting matrix by 90 degrees
+     * - - Give an opportunity to push 2 for transporting matrix by 180 degrees
+     * - - In other case print illegal choice
+     */
+
+
+}
 
