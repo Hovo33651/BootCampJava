@@ -6,6 +6,8 @@ import java.util.Scanner;
 public class Day16 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        primeFactors(121);
+
     }
 
     /**
@@ -14,11 +16,10 @@ public class Day16 {
      */
 
     public static int thePowerToNumber(int num) {
-        if (num >= 1 && num <= 15) {
-            return 2 << num - 1;
+        if (num <= 1 && num >= 15) {
+            return -1;
         }
-        return -1;
-
+        return 2 << num - 1;
     }
 
     /**
@@ -35,11 +36,8 @@ public class Day16 {
     public static void passedTime(int n) {
         LocalTime now = LocalTime.now();
         System.out.println(now);
-        int hour = n / 60;
+        int hour = n / 60 % 24;
         int min = n % 60;
-        if (hour >= 24) {
-            hour = hour % 24;
-        }
         System.out.println("hours: " + hour + "\n" + "min: " + min);
 
     }
@@ -119,7 +117,7 @@ public class Day16 {
      */
 
     public static String capitalFirstLet(String word) {
-        if (word != null) {
+        if (word != null && word.length() != 1) {
 
             word = word.toLowerCase();
             return word = new String()
@@ -177,6 +175,13 @@ public class Day16 {
         double prog = startNum * (Math.pow(k, period - 1));
 
         return prog;
+    }
+
+    public static double nthGeometricalpeogresson(double num, double q, double n) {
+        for (int i = 1; i < n; i++) {
+            num *= q;
+        }
+        return num;
     }
 
 
