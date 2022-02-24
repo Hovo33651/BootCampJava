@@ -6,11 +6,6 @@ public class Day17 {
 
 
     public static void main(String[] args) {
-        int[] array = {2, 5, 8, 9, 14};
-        double[] array1 = {2.7, 5.7, 8.8, 9.1, 14.3};
-        float[] array2 = {2.5f, 5, 8.8f, 9, 14.0f};
-        System.out.println(sumOfDigits(331));
-        System.out.println(reminder(331, 5));
     }
 
     /**
