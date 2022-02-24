@@ -1,14 +1,13 @@
 package HomeWorks.day16;
 
 import java.time.LocalTime;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Day16 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        primeFactors(121);
-
-    }
+snake(4,10);    }
 
     /**
      * 3.A natural number N is given (entered from the keyboard). Calculate two to the power of N
@@ -16,7 +15,7 @@ public class Day16 {
      */
 
     public static int thePowerToNumber(int num) {
-        if (num <= 1 && num >= 15) {
+        if (num <= 1 || num >= 15) {
             return -1;
         }
         return 2 << num - 1;
@@ -57,26 +56,21 @@ public class Day16 {
      * Write a java program to determine whether the number is prime or not.
      */
 
-    public static void numIsPrime(int n) {
-        boolean isPrime = true;
-        int i, m, flag = 0;
-        m = n / 2;
-        if (n == 0 || n == 1) {
-            System.out.println(isPrime);
-        } else {
-            for (i = 2; i <= m; i++) {
-                if (n % i == 0) {
-                    System.out.println(!isPrime);
-                    flag = 1;
-                    break;
-                }
-            }
-            if (flag == 0) {
-                System.out.println(isPrime);
-            }
-
+    public static boolean isPrime(int number) {
+        if (number == 1 || number == 2) {
+            return true;
         }
+        if (number % 2 == 0) {
+            return false;
+        }
+        for (int i = 3; i < number / 2; i += 2) {
+            if (number % i == 0) {
+                return false;
+            }
+        }
+        return true;
     }
+
 
     /**
      * 6.You are given two four-digit numbers A and B. Print all four-digit numbers on the segment from A
@@ -116,16 +110,8 @@ public class Day16 {
      * Lip Lip
      */
 
-    public static String capitalFirstLet(String word) {
-        if (word != null && word.length() != 1) {
-
-            word = word.toLowerCase();
-            return word = new String()
-                    .concat(word.substring(0, 1).toUpperCase())
-                    .concat(word.substring(1));
-
-        }
-        return " ";
+    public static String convert(String s) {
+        return s.toUpperCase(Locale.ROOT).substring(0, 1) + s.toLowerCase(Locale.ROOT).substring(1);
     }
 
     /**
@@ -205,9 +191,9 @@ public class Day16 {
                 System.out.print("* ");
             }
         }
-        if (val > 2)
+        if (val > 2) {
             System.out.print(val);
-
+        }
     }
 
 
@@ -220,6 +206,22 @@ public class Day16 {
      * 0 1 2
      * 0 2 4
      */
+    public static int[][] twoDimensionalMult(int n, int m) {
+        int[][] matrix = new int[n][m];
+        int j = 0;
+        for (int i = 0; i < n; i++) {
+            matrix[i][j] = matrix[j][i] = i * j;
+            j++;
+            --i;
+            if (j == m) {
+                j = 0;
+                i++;
+            }
+
+        }
+        return matrix;
+
+    }
 
     public static void multiplicationTable(int size) {
         int[][] array = new int[size][size];
@@ -277,13 +279,7 @@ public class Day16 {
             }
         }
 
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-
-                System.out.print(array[i][j] + " ");
-            }
-            System.out.println();
-        }
+       printArray(array);
     }
 
 
@@ -294,6 +290,13 @@ public class Day16 {
      * - - In other case print illegal choice
      */
 
-
+    public static void printArray(int[][] array) {
+        for (int[] ints : array) {
+            for (int anInt : ints) {
+                System.out.printf("%4d ", anInt);
+            }
+            System.out.println();
+        }
+    }
 }
 
