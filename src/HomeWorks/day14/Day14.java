@@ -22,6 +22,7 @@ public class Day14 {
     }
 
     /**
+     *
      * 3.Write a function which checks if the given String contains a given character.Pass as parameters
      * String str, char ch
      */
@@ -67,7 +68,7 @@ public class Day14 {
      */
 
     public static void reverseString(String text) {
-
+StringBuilder s=new StringBuilder(text);
         for (int i = text.length() - 1; i >= 0; i--) {
             char ch = text.charAt(i);
             System.out.print(ch);
@@ -104,7 +105,9 @@ public class Day14 {
         System.out.printf("%.2f", f);
         System.out.printf("\n" + "%.2f", k);
     }
-
+    public static boolean isVowel(char ch) {
+        return ("aeoiu".indexOf(Character.toLowerCase(ch)) != -1);
+    }
     /**
      * 7.Caesar&#39;s Code is one of the simplest encryption techniques. Each letter in the plaintext is
      * replaced by a letter with some fixed number of positions (n) down the alphabet cyclically. In this
@@ -176,6 +179,11 @@ public class Day14 {
         }
         return false;
     }
+    public static boolean isLetter(char ch) {
+        char temp = Character.toLowerCase(ch);
+
+        return (temp >= 'a' && temp <= 'z');
+    }
 
     /**
      * 11.Write a function called bin2Dec to convert an input binary string into its equivalent decimal
@@ -196,7 +204,33 @@ public class Day14 {
         }
         return dec;
     }
+    public static boolean isHexadecimal(String str) {
+        for (int i = 0; i < str.length(); i++) {
+            if (!isHexadecimal(str.charAt(i))) {
+                return false;
+            }
+        }
 
+        return true;
+    }
+    public static boolean isHexadecimal(char ch) {
+        char temp = Character.toLowerCase(ch);
+        return (isDigit(temp) ||
+                (temp >= 'a' && temp <= 'f'));
+    }
+    public static boolean isBinary(String str) {
+        for (char ch : str.toCharArray()) {
+            if (ch != '0' && ch != '1') {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public static boolean isDigit(char ch) {
+        return (ch >= '0' && ch <= '9');
+    }
     /**
      * 12.Write a function that counts duplicate characters from a given string.
      */
@@ -218,7 +252,25 @@ public class Day14 {
         }
         System.out.println(line);
     }
+    public static int countDuplicates(String str) {
+        int res = 0;
+        int dupCount;
+        int len = str.length();
+        for (int i = 0; i < len - 1; i++) {
+            dupCount = 0;
+            for (int j = i + 1; j < len; j++) {
+                if (str.charAt(i) == str.charAt(j)) {
+                    dupCount++;
+                }
+            }
 
+            if (dupCount == 1) {
+                res++;
+            }
+        }
+
+        return res;
+    }
     /**
      * 13.Write a function that returns the first non-repeated character from a given string.
      */
@@ -237,6 +289,27 @@ public class Day14 {
 
             }
         }
+    }
+
+    public static char firstUniqueChar(String str) {
+        int len = str.length();
+        char ch;
+        boolean hasDuplicate;
+        for (int i = 0; i < len - 1; i++) {
+            hasDuplicate = false;
+            for (int j = i + 1; j < len; j++) {
+                if (str.charAt(i) == str.charAt(j)) {
+                    hasDuplicate = true;
+                    break;
+                }
+            }
+
+            if (!hasDuplicate) {
+                return str.charAt(i);
+            }
+        }
+
+        return ' ';
     }
 
 
