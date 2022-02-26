@@ -7,7 +7,8 @@ import java.util.Scanner;
 public class Day16 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-snake(4,10);    }
+       snake(4,10);
+    }
 
     /**
      * 3.A natural number N is given (entered from the keyboard). Calculate two to the power of N
@@ -252,6 +253,30 @@ snake(4,10);    }
      * 9 13 17 21 25 29 33 36 38 39
      */
 
+    public static void fillDiagonally(int[][] matrix) {
+        int n = matrix.length;
+        int m = matrix[0].length;
+        int val = 0;
+        int col;
+        for (int j = 0; j < m; j++) {
+            col = j;
+            for (int row = 0; (row < n && col >= 0); row++) {
+                matrix[row][col] = val;
+                val++;
+                col--;
+            }
+        }
+
+        for (int i = 1; i < n; i++) {
+            col = m - 1;
+            for (int row = i; (row < n && col >= 0); row++) {
+                matrix[row][col] = val;
+                val++;
+                col--;
+            }
+        }
+    }
+
 
     /**
      * 13.Given numbers n and m. Create an array A [n] [m] and fill it with a snake (see example).
@@ -289,7 +314,20 @@ snake(4,10);    }
      * - - Give an opportunity to push 2 for transporting matrix by 180 degrees
      * - - In other case print illegal choice
      */
-
+    public static void rotate90(int[][] matrix) {
+        int n = matrix.length;
+        int temp;
+        int end = n - 1;
+        for (int i = 0; i < n / 2; i++) {
+            for (int j = i; j < end - i; j++) {
+                temp = matrix[i][j];
+                matrix[i][j] = matrix[end - j][i];
+                matrix[end - j][i] = matrix[end - i][end - j];
+                matrix[end - i][end - j] = matrix[j][end - i];
+                matrix[j][end - i] = temp;
+            }
+        }
+    }
     public static void printArray(int[][] array) {
         for (int[] ints : array) {
             for (int anInt : ints) {
