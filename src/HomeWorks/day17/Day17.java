@@ -178,6 +178,13 @@ public class Day17 {
     public static int fahrenheitCelsius(double fahrenheit) {
         return (int) ((5 * (fahrenheit - 32.0)) / 9.0);
     }
+    public static int fahrenheitCelsius(float celsius, int choice) {
+        return (int) (celsius * 1.8 + 32);
+    }
+
+    public static double fahrenheitCelsius(int choice, float celsius) {
+        return celsius * 1.8 + 32;
+    }
 
     /**
      * 10.Write a function` remainder() which
