@@ -115,17 +115,17 @@ public class Day17 {
      * - - if get 2 parameters returns the square of rectangle
      */
 
-    public static double areaCircle(double a) {
+    public static double area(double a) {
 
         return Math.PI * a * a;
     }
 
-    public static float areaSquare(float a) {
+    public static float area(float a) {
 
         return a * a;
     }
 
-    public static int areaRectangle(int a, int b) {
+    public static int area(int a, int b) {
         return a * b;
     }
 
@@ -136,9 +136,13 @@ public class Day17 {
      * - - max(int a , int b, int c, int d)
      */
 
+
+
     public static int max(int a, int b) {
-        return (a >= b) ? a : b;
+        int twoMax=(a >= b) ? a : b;
+        return  twoMax;
     }
+
 
     public static int max(int a, int b, int c) {
         return (max(a, b) >= c) ? max(a, b) : c;
@@ -175,16 +179,39 @@ public class Day17 {
      * Example` fahrenheitCelsius(32.0, 1);
      * Output` 32 fahrenheit is 0 celsius ;
      */
-    public static int fahrenheitCelsius(double fahrenheit) {
+    public static int fahrenheitCelsius1(double fahrenheit) {
         return (int) ((5 * (fahrenheit - 32.0)) / 9.0);
     }
-    public static int fahrenheitCelsius(float celsius, int choice) {
+    public static int fahrenheitCelsius1(float celsius, int choice) {
         return (int) (celsius * 1.8 + 32);
     }
 
-    public static double fahrenheitCelsius(int choice, float celsius) {
+    public static double fahrenheitCelsius1(int choice, float celsius) {
         return celsius * 1.8 + 32;
     }
+    public static void fahrenheitCelsius(float celsius, int choice) {
+        if (choice == 1) {
+            int fahrenheit = (int) ((celsius * 9) / 5) + 32;
+            System.out.println(fahrenheit);
+        } else if (choice == 2) {
+            double fahrenheit = (double) ((celsius * 9) / 5) + 32;
+            System.out.println(Math.round(fahrenheit));
+            System.out.println("Invalid argument");
+        }
+    }
+
+    public static void fahrenheitCelsius(int choice, float fahrenheit) {
+        if (choice == 1) {
+            int celsius = (int) ((fahrenheit - 32) * 5 / 9);
+            System.out.println(celsius);
+        } else if (choice == 2) {
+            double celsius = (double) ((fahrenheit - 32) * 5 / 9);
+            System.out.println(Math.round(celsius));
+        } else {
+            System.out.println("Invalid argument");
+        }
+    }
+
 
     /**
      * 10.Write a function` remainder() which
@@ -193,7 +220,7 @@ public class Day17 {
      * second parameter(reminder(int 331, int 5) {
      * return (3 + 3 + 1) % 5
      */
-    public static int sumOfDigits(int num) {
+    public static int reminder(int num) {
         int i = 0;
         int sum = 0;
         while (num > 0) {
@@ -207,12 +234,14 @@ public class Day17 {
     public static int reminder(int value, int dif) {
 
         if (dif != 0) {
-            return sumOfDigits(value) % dif;
+            return reminder(value) % dif;
         }
 
         return -1;
 
     }
+
+
 
 
 }
