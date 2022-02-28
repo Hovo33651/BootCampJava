@@ -139,18 +139,20 @@ public class Day17 {
 
 
     public static int max(int a, int b) {
-        int twoMax=(a >= b) ? a : b;
-        return  twoMax;
+        return   Math.max(a, b);
     }
 
 
     public static int max(int a, int b, int c) {
-        return (max(a, b) >= c) ? max(a, b) : c;
+        return Math.max(max(a, b), c);
     }
 
     public static int max(int a, int b, int c, int d) {
-        return (max(a, b, c) >= d) ? max(a, b, c) : d;
+        return Math.max(max(a, b, c), d);
     }
+
+
+
 
     /**
      * 8.Write a distance() function which
