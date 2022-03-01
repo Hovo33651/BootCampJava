@@ -1,4 +1,4 @@
-package HomeWorks.day18;
+package HomeWorks.day18.models;
 
 /**
  * 1. Write a Person.java class which `
@@ -34,12 +34,6 @@ public class Person {
         this.passportId = passprtId;
         this.age = age;
         this.gender = gender;
-        setFirstName(firstName);
-        setLastName(lastName);
-        setAge(age);
-        setGender(gender);
-        setPassportId(passportId);
-
     }
 
     public String getFirstName() {
@@ -47,9 +41,6 @@ public class Person {
     }
 
     public void setFirstName(String firstName) {
-        if (firstName == null || firstName.length() < 3 || firstName.length() > 15) {
-            System.out.println(" first Name must be in range 3 to 15");
-        }
         this.firstName = firstName;
     }
 
@@ -58,9 +49,6 @@ public class Person {
     }
 
     public void setLastName(String lastName) {
-        if (lastName == null || lastName.length() < 6 || lastName.length() > 20) {
-            System.out.println("last Name must be in range 6 to 20");
-        }
         this.lastName = lastName;
     }
 
@@ -69,17 +57,6 @@ public class Person {
     }
 
     public void setPassportId(String passportId) {
-        int length = passportId.length();
-        boolean isDigit = true;
-        for (int i = 3; i < length - 2; i++) {
-            if (passportId.charAt(i) < '0' || passportId.charAt(i) > '9') {
-                isDigit = false;
-                break;
-            }
-        }
-        if (!passportId.substring(0, 2).equals("AN") && length != 8 && !isDigit) {
-            System.out.println("Invalid pasport ID");
-        }
         this.passportId = passportId;
 
     }
@@ -89,9 +66,6 @@ public class Person {
     }
 
     public void setAge(int age) {
-        if (age < 18 || age > 99) {
-            System.out.println("age must be in range 18 - 99");
-        }
         this.age = age;
     }
 
@@ -100,9 +74,6 @@ public class Person {
     }
 
     public void setGender(String gender) {
-        if (gender.compareToIgnoreCase("Male") != 0 || gender.compareToIgnoreCase("Female") != 0) {
-            System.out.println(" gender must be male or female");
-        }
         this.gender = gender;
     }
 

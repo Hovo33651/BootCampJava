@@ -1,12 +1,24 @@
-package HomeWorks.day18;
+package HomeWorks.day18.models;
 
+import java.util.Arrays;
+
+/**4.
+ * Write a Store.java class which`
+ * - - has a countOfWorkers, name, phoneNumber,
+ * array of product numbers(what kind of product are in store)
+ * where`
+ * - - countOfWorkers must be in range 2 - 50
+ * - - name must have at least 3 characters
+ * - - phoneNumber must have 8 digits, also can not consist negative
+ * digits
+ */
 public class Store {
     private int countOfWorkers;
     private String name;
     private String phoneNumber;
     int[] productNumbers;
 
-    public Store(){
+    public Store() {
 
     }
 
@@ -23,9 +35,6 @@ public class Store {
     }
 
     public void setCountOfWorkers(int countOfWorkers) {
-        if (countOfWorkers < 2 || countOfWorkers > 50) {
-            System.out.println("count Of Workers must be in range 2 - 50");
-        }
         this.countOfWorkers = countOfWorkers;
     }
 
@@ -34,9 +43,6 @@ public class Store {
     }
 
     public void setName(String name) {
-        if( name==null || name.length()<3 ){
-            System.out.println("name must have at least 3 characters");
-        }
         this.name = name;
     }
 
@@ -48,11 +54,24 @@ public class Store {
         this.phoneNumber = phoneNumber;
     }
 
+
     public int[] getProductNumbers() {
+
         return productNumbers;
     }
 
     public void setProductNumbers(int[] productNumbers) {
+
         this.productNumbers = productNumbers;
+    }
+
+    @Override
+    public String toString() {
+        return "Store{" +
+                "countOfWorkers=" + countOfWorkers +
+                ", name='" + name + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", productNumbers=" + Arrays.toString(productNumbers) +
+                '}';
     }
 }
