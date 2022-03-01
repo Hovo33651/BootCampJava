@@ -9,7 +9,7 @@ public final  class StoreValidator {
         return countOfWorkers >= 2 && countOfWorkers <= 50;
     }
 
-    public static boolean isValidName(String name) {
+    public static boolean isValidName1(String name) {
         return name != null && name.length() >= 3;
     }
 

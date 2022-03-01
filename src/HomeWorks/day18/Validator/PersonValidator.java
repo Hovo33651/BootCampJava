@@ -27,21 +27,19 @@ public final class PersonValidator {
     }
 
 
-    public static boolean isValidPasswordId(String passportId) {
-        int length = passportId.length();
-        boolean isDigit = true;
-        for (int i = 3; i < length - 2; i++) {
-            if (passportId.charAt(i) < '0' || passportId.charAt(i) > '9') {
-                isDigit = false;
-                break;
-            }
+    public static boolean isValidPasspordId(String passportId) {
+        if (passportId == null) {
+            return false;
         }
-        return passportId.substring(0, 2).equals("AN") || length == 8 || isDigit;
+        return passportId.length() == 8 && "AN".equals(passportId.substring(0, 2)) &&
+                Integer.parseInt(passportId.substring(2)) >= 0;
     }
 
     public static boolean isValidGender(String gender) {
-        return gender.compareToIgnoreCase("Male") == 0 && gender.compareToIgnoreCase("Female") == 0;
+        return (gender != null && (gender.equalsIgnoreCase("male") || gender.equalsIgnoreCase("female")));
     }
+
+
 
 
 
