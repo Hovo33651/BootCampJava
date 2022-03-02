@@ -22,7 +22,7 @@ public final class TriangleValidator {
         return !(sideA + sideB <= sideC) && !(sideA + sideC <= sideB) && !(sideB + sideC <= sideA);
     }
 
-    public boolean check(Triangle triangle) {
+    public static boolean check(Triangle triangle) {
         return isTriangleValid(triangle.getSideA(), triangle.getSideB(), triangle.getSideC());
     }
 
