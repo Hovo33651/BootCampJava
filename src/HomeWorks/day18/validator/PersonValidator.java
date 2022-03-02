@@ -11,19 +11,17 @@ public final class PersonValidator {
     }
 
     public static boolean isValidFirstName(String firstName) {
-        if (firstName == null || firstName.length() == 0) {
+        if (firstName == null || firstName.length()<3 || firstName.length()>15) {
             return false;
         }
-        int len = firstName.length();
-        return (len >= 3 && len <= 15);
+        return true;
     }
 
     public static boolean isValidLastName(String lastName) {
-        if (lastName == null || lastName.length() == 0) {
+        if (lastName == null || lastName.length()<6 || lastName.length()>20) {
             return false;
         }
-        int len = lastName.length();
-        return (len >= 6 && len <= 20);
+        return true;
     }
 
 

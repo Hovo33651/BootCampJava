@@ -10,11 +10,10 @@ public final  class StoreValidator {
     }
 
     public static boolean isValidName1(String name1) {
-     if(name1==null || name1.length()==0){
+     if(name1==null  ||name1.length()<3){
          return false;
      }
-     int len=name1.length();
-     return  len >= 3;
+     return  true;
     }
 
     public static boolean isValidPhoneName(String phoneNumber) {
