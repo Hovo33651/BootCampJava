@@ -9,8 +9,12 @@ public final  class StoreValidator {
         return countOfWorkers >= 2 && countOfWorkers <= 50;
     }
 
-    public static boolean isValidName1(String name) {
-        return name != null && name.length() >= 3;
+    public static boolean isValidName1(String name1) {
+     if(name1==null || name1.length()==0){
+         return false;
+     }
+     int len=name1.length();
+     return  len >= 3;
     }
 
     public static boolean isValidPhoneName(String phoneNumber) {
@@ -20,6 +24,7 @@ public final  class StoreValidator {
     }
 
 
+    }
 
 
-}
+

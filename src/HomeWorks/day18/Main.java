@@ -39,7 +39,7 @@ public class Main {
         if (isValidLastName(lastName)) {
             person.setLastName(lastName);
         } else {
-            System.out.println("lastName must be in range 3 to 15");
+            System.out.println("lastName must be in range 6 to 20");
         }
 
         System.out.print("Input age: ");
@@ -51,7 +51,7 @@ public class Main {
         }
 
         System.out.print("Input passportId name: ");
-        String passportId = scanner.nextLine();
+        String passportId = scanner.next();
         if (isValidPasspordId(passportId)) {
             person.setPassportId(passportId);
         } else {
@@ -60,12 +60,14 @@ public class Main {
 
 
         System.out.print("Input gender MALE OT FEMALE: ");
-        String gender = scanner.nextLine();
+        String gender = scanner.next();
         if (isValidGender(gender)) {
             person.setGender(gender);
         } else {
             System.out.println("gender must be male or female(compareToIgnoreCase())");
         }
+
+
 
         System.out.println(person.display());
 
@@ -122,9 +124,9 @@ public class Main {
         }
 
         System.out.print("input name: ");
-        String name = scanner.nextLine();
-        if (isValidName1(name)) {
-            store.setName(name);
+        String name1 = scanner.next();
+        if (isValidName1(name1)) {
+            store.setName1(name1);
         } else {
             System.out.println("name must have at least 3 characters");
         }
@@ -132,13 +134,25 @@ public class Main {
 
 
         System.out.print("input  phoneNumber: ");
-        String phoneNumber = scanner.nextLine();
+        String phoneNumber = scanner.next();
         if (isValidPhoneName(phoneNumber)) {
             store.setPhoneNumber(phoneNumber);
         } else {
             System.out.println("phoneNumber must have 8 digits, also can not consist negative digits");
         }
+
+        System.out.print("input  productNumber: ");
+        int[] productNumber=new int[10];
+        for (int i = 0; i < 10; i++) {
+            int p = scanner.nextInt();
+            productNumber[i]=p;
+            store.setProductNumbers(productNumber);
+        }
+
+
         System.out.println(store.toString());
     }
 
-    }
+
+
+}

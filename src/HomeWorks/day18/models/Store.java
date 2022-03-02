@@ -14,7 +14,7 @@ import java.util.Arrays;
  */
 public class Store {
     private int countOfWorkers;
-    private String name;
+    private String name1;
     private String phoneNumber;
     int[] productNumbers;
 
@@ -24,7 +24,7 @@ public class Store {
 
     public Store(int countOfWorkers, String name, String phoneNumber, int[] productNumbers) {
         this.countOfWorkers = countOfWorkers;
-        this.name = name;
+        this.name1 = name;
         this.phoneNumber = phoneNumber;
         this.productNumbers = productNumbers;
     }
@@ -38,12 +38,12 @@ public class Store {
         this.countOfWorkers = countOfWorkers;
     }
 
-    public String getName() {
-        return name;
+    public String getName1() {
+        return name1;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName1(String name1) {
+        this.name1 = name1;
     }
 
     public String getPhoneNumber() {
@@ -69,7 +69,7 @@ public class Store {
     public String toString() {
         return "Store{" +
                 "countOfWorkers=" + countOfWorkers +
-                ", name='" + name + '\'' +
+                ", name='" + name1 + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", productNumbers=" + Arrays.toString(productNumbers) +
                 '}';
