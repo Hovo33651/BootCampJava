@@ -1,6 +1,6 @@
 package HomeWorks.day19.task2;
 
-import HomeWorks.day19.task3.ItCompany;
+
 
 public class Accounting  {
     private int countOfEmployers;
@@ -14,4 +14,19 @@ public class Accounting  {
 
     }
 
+    public int getCountOfEmployers() {
+        return countOfEmployers;
+    }
+
+    public void setCountOfEmployers(int countOfEmployers) {
+        this.countOfEmployers = countOfEmployers;
+    }
+
+    public String getDepartmentName() {
+        return departmentName;
+    }
+
+    public void setDepartmentName(String departmentName) {
+        this.departmentName = departmentName;
+    }
 }

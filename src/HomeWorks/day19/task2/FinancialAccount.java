@@ -14,6 +14,20 @@ public class FinancialAccount extends TaxAccounting {
     public void account() {
         System.out.println(" salryOfEployeers");
     }
-    
 
+    public int getCountOfEmployers() {
+        return countOfEmployers;
+    }
+
+    public void setCountOfEmployers(int countOfEmployers) {
+        this.countOfEmployers = countOfEmployers;
+    }
+
+    public String getDepartmentName() {
+        return departmentName;
+    }
+
+    public void setDepartmentName(String departmentName) {
+        this.departmentName = departmentName;
+    }
 }
