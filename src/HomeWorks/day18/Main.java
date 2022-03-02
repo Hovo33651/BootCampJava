@@ -6,9 +6,9 @@ import HomeWorks.day18.models.Triangle;
 
 import java.util.Scanner;
 
-import static HomeWorks.day18.Validator.PersonValidator.*;
-import static HomeWorks.day18.Validator.StoreValidator.*;
-import static HomeWorks.day18.Validator.TriangleValidator.*;
+import static HomeWorks.day18.validator.PersonValidator.*;
+import static HomeWorks.day18.validator.StoreValidator.*;
+import static HomeWorks.day18.validator.TriangleValidator.*;
 
 public class Main {
     public static void main(String[] args) {

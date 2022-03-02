@@ -1,4 +1,4 @@
-package HomeWorks.day18.Validator;
+package HomeWorks.day18.validator;
 
 public final class PersonValidator {
     private PersonValidator() {
