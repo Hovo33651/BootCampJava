@@ -1,6 +1,5 @@
 package HomeWorks.day18;
 
-import HomeWorks.day18.Validator.StoreValidator;
 import HomeWorks.day18.models.Person;
 import HomeWorks.day18.models.Store;
 import HomeWorks.day18.models.Triangle;
@@ -68,7 +67,6 @@ public class Main {
         }
 
 
-
         System.out.println(person.display());
 
 /**
@@ -76,9 +74,9 @@ public class Main {
  */
         Triangle triangle1 = new Triangle();
 
-        System.out.print("Input sideA: ");
+        System.out.print("Input side: ");
         double sideA = scanner.nextDouble();
-        if (isValidSideA(sideA)) {
+        if (isValidSide(sideA)) {
             triangle1.setSideA(sideA);
         } else {
             System.out.println("sideA must be in range 1 - 20");
@@ -86,7 +84,7 @@ public class Main {
 
         System.out.print("Input sideB: ");
         double sideB = scanner.nextDouble();
-        if (isValidSideB(sideB)) {
+        if (isValidSide(sideB)) {
             triangle1.setSideB(sideB);
         } else {
             System.out.println("sideB must be in range 1 - 20");
@@ -94,7 +92,7 @@ public class Main {
 
         System.out.print("Input sideC: ");
         double sideC = scanner.nextDouble();
-        if (isValidSideC(sideC)) {
+        if (isValidSide(sideC)) {
             triangle1.setSideC(sideC);
         } else {
             System.out.println("sideC must be in range 1 - 20");
@@ -105,7 +103,7 @@ public class Main {
         }
 
         if (isTriangleRight(sideA, sideB, sideC)) {
-           countSquare(triangle1);
+            countSquare(triangle1);
         } else countPerimeter(triangle1);
 
         System.out.println(triangle1.toString());
@@ -113,7 +111,7 @@ public class Main {
         /**
          *4
          */
-        Store store=new Store();
+        Store store = new Store();
 
         System.out.print("input count  workers: ");
         int countOfWorkers = scanner.nextInt();
@@ -132,7 +130,6 @@ public class Main {
         }
 
 
-
         System.out.print("input  phoneNumber: ");
         String phoneNumber = scanner.next();
         if (isValidPhoneName(phoneNumber)) {
@@ -142,17 +139,16 @@ public class Main {
         }
 
         System.out.print("input  productNumber: ");
-        int[] productNumber=new int[10];
+        int[] productNumber = new int[10];
         for (int i = 0; i < 10; i++) {
             int p = scanner.nextInt();
-            productNumber[i]=p;
+            productNumber[i] = p;
             store.setProductNumbers(productNumber);
         }
 
 
         System.out.println(store.toString());
     }
-
 
 
 }

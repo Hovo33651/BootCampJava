@@ -6,17 +6,11 @@ public final class TriangleValidator {
     private TriangleValidator() {
     }
 
-    public static boolean isValidSideA(double sideA) {
-        return !(sideA < 1) && !(sideA > 20);
+    public static boolean isValidSide(double side) {
+
+        return !(side < 1) && !(side > 20);
     }
 
-    public static boolean isValidSideB(double sideB) {
-        return !(sideB < 1) && !(sideB > 20);
-    }
-
-    public static boolean isValidSideC(double sideC) {
-        return !(sideC < 1) && !(sideC > 20);
-    }
 
     public static boolean isTriangleValid(double sideA, double sideB, double sideC) {
         return !(sideA + sideB <= sideC) && !(sideA + sideC <= sideB) && !(sideB + sideC <= sideA);
@@ -46,7 +40,9 @@ public final class TriangleValidator {
                 return (triangle.getSideB() * triangle.getSideC()) / 2;
             } else if (max == triangle.getSideB()) {
                 return (triangle.getSideA() * triangle.getSideC()) / 2;
-        } } return (triangle.getSideA() * triangle.getSideB()) / 2;
+            }
+        }
+        return (triangle.getSideA() * triangle.getSideB()) / 2;
     }
 
     public static double countPerimeter(Triangle triangle) {
